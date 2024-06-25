@@ -1,0 +1,65 @@
+class Poultry:
+    def __init__(self, species, age, weight):
+        self.species = species
+        self.age = age
+        self.weight = weight
+
+    def feed(self, amount):
+        # Code to feed the poultry
+        pass
+
+    def vaccinate(self, vaccine):
+        # Code to vaccinate the poultry
+        pass
+
+class Chicken(Poultry):
+    def __init__(self, breed, age, weight):
+        super().__init__("Chicken", age, weight)
+        self.breed = breed
+
+    def lay_eggs(self):
+        # Code for egg-laying process
+        pass
+
+class Duck(Poultry):
+    def __init__(self, species, age, weight):
+        super().__init__("Duck", age, weight)
+
+    def lay_eggs(self):
+        # Code for egg-laying process
+        pass
+
+class Farm:
+    def __init__(self):
+        self.poultry_population = []
+
+    def add_poultry(self, poultry):
+        self.poultry_population.append(poultry)
+
+    def remove_poultry(self, poultry):
+        self.poultry_population.remove(poultry)
+
+    def feed_all_poultry(self, amount):
+        for poultry in self.poultry_population:
+            poultry.feed(amount)
+
+    def vaccinate_all_poultry(self, vaccine):
+        for poultry in self.poultry_population:
+            poultry.vaccinate(vaccine)
+
+# Example usage:
+farm = Farm()
+
+chicken1 = Chicken("Rhode Island Red", 1, 1.5)
+chicken2 = Chicken("Leghorn", 2, 1.8)
+duck1 = Duck("Pekin", 1, 2.0)
+
+farm.add_poultry(chicken1)
+farm.add_poultry(chicken2)
+farm.add_poultry(duck1)
+
+farm.feed_all_poultry(100)
+farm.vaccinate_all_poultry("Newcastle Disease")
+{
+    
+}
